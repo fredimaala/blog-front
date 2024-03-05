@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
+import ItemList from './components/ItemList.vue';
 
 let i = 0;
 let messege = ref('Hello Vue');
@@ -28,29 +29,10 @@ let toDoItems = computed(() => {
 <button @click="add">Click Me</button>
 <input type="text" v-model="messege" @keydown.enter="add">
 
-<h1>All items</h1>
-<ul>
-  <li v-for="item in items" :key="item.id">
-    {{ item.name }}
-    <input type="checkbox" v-model="item.isDone">
-  </li>
-</ul>
+<ItemList :items="items" title="All items"></ItemList>
+<ItemList :items="doneItems" title="Done items"></ItemList>
+<ItemList :items="toDoItems" title="Todo items"></ItemList>
 
-<h1>Done items</h1>
-<ul>
-  <li v-for="item in doneItems" :key="item.id">
-    {{ item.name }}
-    <input type="checkbox" v-model="item.isDone">
-  </li>
-</ul>
-
-<h1>Todo items</h1>
-<ul>
-  <li v-for="item in toDoItems" :key="item.id">
-    {{ item.name }}
-    <input type="checkbox" v-model="item.isDone">
-  </li>
-</ul>
 </template>
 
 
