@@ -3,20 +3,19 @@ import { ref, computed } from 'vue';
 import ItemList from '../components/ItemList.vue';
 
 let i = 0;
-let messege = ref('Hello Vue');
-
+let message = ref('Hello Vue');
 let items = ref([
-  {id: i++, name:'sai', isDone: false},
-  {id: i++, name:'munad', isDone: false},
-  {id: i++, name:'piim', isDone: true},
-  {id: i++, name:'viin', isDone: false},
-  {id: i++, name:'suits', isDone: true},
+  {id: i++, name:'Sai', isDone: true},
+  {id: i++, name:'Munad', isDone: false},
+  {id: i++, name:'Piim', isDone: true},
+  {id: i++, name:'Viin', isDone: false},
+  {id: i++, name:'Kohuke', isDone: false},
 ]);
-function add() {
-  if (messege.value.trim() !== '') {
-    items.value.push({id: i++, name:messege.value.trim(), isDone: true},);
+function add(){
+  if(message.value.trim() !== ''){
+    items.value.push({id: i++, name: message.value.trim(), isDone: false});
   }
-  messege.value = '';
+  message.value = '';
 }
 let doneItems = computed(() => {
   return items.value.filter(item => item.isDone);
@@ -26,13 +25,11 @@ let toDoItems = computed(() => {
 });
 </script>
 <template>
-<button @click="add">Click Me</button>
-<input type="text" v-model="messege" @keydown.enter="add">
+<button @click="add">Click me</button>
+<input type="text" v-model="message" @keydown.enter="add">
 
-<ItemList :items="items" title="All items"></ItemList>
-<ItemList :items="doneItems" title="Done items"></ItemList>
-<ItemList :items="toDoItems" title="Todo items"></ItemList>
+<item-list :items="items" title="All Items"></item-list>
+<ItemList  :items="doneItems" title="Done Items"></ItemList>
+<ItemList :items="toDoItems" title="ToDo Items"></ItemList>
 
 </template>
-
-
