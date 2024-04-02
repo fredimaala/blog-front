@@ -11,6 +11,8 @@
   "dependencies": {
     "@ntohq/buefy-next": "^0.1.2",
     "axios": "^1.6.8",
+    "luxon": "^3.4.4",
+    "pinia": "^2.1.7",
     "vue": "^3.4.15",
     "vue-router": "^4.3.0"
   },

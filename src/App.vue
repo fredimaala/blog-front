@@ -4,5 +4,7 @@ import MainNav from './components/MainNav.vue';
 </script>
 <template>
   <MainNav></MainNav>
-  <RouterView></RouterView>
+  <Suspense>
+    <RouterView></RouterView>
+  </Suspense>
 </template>
