@@ -1,3 +1,5 @@
+
+import { RouterLink } from 'vue-router';
 <template>
     <b-navbar>
         <template #brand>
@@ -20,9 +22,9 @@
         <template #end>
             <b-navbar-item tag="div">
                 <div class="buttons">
-                    <a class="button is-primary">
+                    <RouterLink to="/signup" class="button is-primary">
                         <strong>Sign up</strong>
-                    </a>
+                    </RouterLink>
                     <RouterLink to="/login" class="button is-light">
                         Log in
                     </RouterLink>

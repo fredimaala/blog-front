@@ -10,6 +10,7 @@ import App from './App.vue';
 import Home from './pages/Home.vue';
 import ToDo from './pages/ToDo.vue';
 import Login from './pages/Login.vue';
+import Signup from './pages/SignUp.vue';
 // 2. Define some routes
 // Each route should map to a component.
 // We'll talk about nested routes later.
@@ -17,6 +18,7 @@ const routes = [
     { path: '/', component: Home },
     { path: '/todo', component: ToDo },
     { path: '/login', component: Login },
+    { path: '/signup', component: Signup },
 ];
 // 3. Create the router instance and pass the `routes` option
 // You can pass in additional options here, but let's
